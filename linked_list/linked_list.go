@@ -1,9 +1,9 @@
 package linked_list
 
-import (
-	"fmt"
-	// "os"
-)
+// import (
+// 	"fmt"
+// 	"os"
+// )
 
 type Node struct {
 	Value interface{}
@@ -43,16 +43,14 @@ func AppendToList(head, node *Node) Node {
 func PrependToList(head, node *Node) Node {
 	current := head
 	
-	for current.Next != nil /* && current.Next != node */{
+	for current != node {
 		
-		// if current.Next == nil {
-		// 	*current.Next = *node
-		// }
+		if current.Next == nil {
+			current.Next = node
+			break
+		}
 
-		*current = *current.Next
-		// fmt.Println(next)
-		fmt.Println(current)
-		// os.Exit(1)
+		current = current.Next
 	}
 
 	return *head
@@ -67,7 +65,7 @@ func AddToNthChild(head, node *Node, lvl int) Node {
 	for i <= lvl {
 		if i == lvl {
 			node.Next = current.Next
-			current = node
+			current.Next = node
 			break
 		}
 

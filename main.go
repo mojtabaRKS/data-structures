@@ -14,6 +14,7 @@ func main() {
 	
 
 	// new_appended_head := linked_list.AppendToList(&head, &new_node)
-	new_prepended_head := linked_list.PrependToList(&head, &new_node)
-	fmt.Println(new_prepended_head.Next.Next.Next)
+	// new_prepended_head := linked_list.PrependToList(&head, &new_node)
+	new_nth_head := linked_list.AddToNthChild(&head, &new_node, 2)
+	fmt.Println(new_nth_head.Next.Next)
 }
