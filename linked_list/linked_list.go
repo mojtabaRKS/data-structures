@@ -1,10 +1,5 @@
 package linked_list
 
-// import (
-// 	"fmt"
-// 	"os"
-// )
-
 type Node struct {
 	Value interface{}
 	Next *Node
